@@ -12,8 +12,10 @@ export class ListadoComponent {
 
   borrarHeroe() {
     console.log('borrando...');
-    this.heroeBorrado = this.heroes.shift() || '';
-
+    if (this.heroeBorrado == '' && this.heroes.length == 0) {
+      this.heroes = ['Spiderman', 'Iron Man', 'Hulk', 'Thor'];
+    } else {
+      this.heroeBorrado = this.heroes.shift() || '';
+    }
   }
-
 }
